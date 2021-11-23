@@ -1,0 +1,5 @@
+Classes can extend other classes. This allows the child class to inherit all of the methods and attributes of the parent.
+You can then add functionality in the child class or modify functionality from the parent class via overloading.
+
+super is a keyword that refers to the parent class of a class you are working with. You can run super.anyMethod()
+to run super's version of anyMethod, even non-static ones. Writing super() invokes the parent class's constructor function.
