@@ -1,2 +1,2 @@
 # YoRPG_TeamWalrus
-TeamWalrus's Yo_RPG project for APCS
+TeamWalrus (Humans: Daniel Jung, Joshua Yagupsky, Ethan Lam; Ducks: Ralph, Quacker, Carl)
