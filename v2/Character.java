@@ -1,8 +1,8 @@
 public class Character{
-	int health;
-	int strength;
-	int defense;
-	double attack_rating;
+	protected int health;
+	protected int strength;
+	protected int defense;
+	protected double attack_rating;
 	public Character(int health, int strength, int defense, double attack_rating){
 		this.health = health;
 		this.strength = strength;
