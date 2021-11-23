@@ -1,7 +1,5 @@
 public class Monster extends Character{
-  boolean alive = true;
-  public boolean isAlive(){
-    return alive;
+  public Monster() {
+    super(100, 20, 15, 1.0);
   }
-  public int attack (Protagonist person){}
 }

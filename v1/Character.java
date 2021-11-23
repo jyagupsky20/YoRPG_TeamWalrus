@@ -10,12 +10,17 @@ public class Character{
 		this.attack_rating = attack_rating;
 	}
 	public boolean isAlive(){
-    return health > 0;
+    return (health > 0);
   }
 	public int getDefense(){
 		return defense;
 	}
 	public void lowerHP(int amount){
 		health -= amount;
+	}
+	public int attack(Character defendant){
+		int damage = (int) Math.max((this.strength*this.attack_rating)-defendant.getDefense(),0);
+		defendant.lowerHP(damage);
+		return damage;
 	}
 }
