@@ -1,23 +1,16 @@
 public class Protagonist {
   String name = "";
-  boolean alive = true;
-  boolean isStrongAttack = false;
-  public Protagonist(String name){
+  public Protagonist(int health, int strength, int defense, double attack_rating, String name){
+    super(int health, int strength, int defense, double attack_rating)
     this.name = name;
-  }
-  public boolean isAlive(){
-    return alive;
   }
   public String getName(){
     return name;
   }
   public void specialize(){
-    isStrongAttack = true;
+    attack_rating = 15;
   }
   public void normalize(){
-    isStrongAttack = false;
-  }
-  public int attack(Monster enemy){
-    return 5;
+    attack_rating = 10;
   }
 }
