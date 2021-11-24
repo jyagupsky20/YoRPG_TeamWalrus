@@ -9,7 +9,7 @@ public class Protagonist extends Character{
     return name;
   }
   public void offerChoice(){
-    System.out.println("No decision to be made here. This is the default case.");
+    System.out.println("No choice to be offered here. This is the default case.");
   }
   public void makeDecision(String in){
     System.out.println("No decision to be made here. This is the default case.");

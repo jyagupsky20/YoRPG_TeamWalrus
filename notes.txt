@@ -6,6 +6,3 @@ to run super's version of anyMethod, even non-static ones. Writing super() invok
 
 protected is an access modifier that is between private and public. For a child class, a protected method or variable will
 be treated like public, while for non-child classes it will be treated like private.
-
-You can declare a variable to be of a parent class and then assign it to a new instance of one of its child classes. This is useful
-when we are trying to initialize the Protagonist, since we don't know what specific type of Protagonist it will be.

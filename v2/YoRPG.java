@@ -26,7 +26,6 @@ public class YoRPG {
   //change this constant to set number of encounters in a game
   public final static int MAX_ENCOUNTERS = 5;
 
-  //each round, a Protagonist and a Monster will be instantiated...
   private Protagonist pat;
   private Monster smaug;
 
@@ -103,13 +102,13 @@ public class YoRPG {
 
     //instantiate the player's character
     if (protagonistsel == 1){
-      pat = new Human( name );
+      Human pat = new Human( name );
     }
     else if (protagonistsel == 2) {
-      pat = new Wizard(name);
+      Wizard pat = new Wizard(name);
     }
     else {
-      pat = new Elf(name);
+      Elf pat = new Elf(name);
     }
   }//end newGame()
 
