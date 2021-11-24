@@ -85,7 +85,7 @@ public class YoRPG {
     catch ( IOException e ) { }
 
     //instantiate the player's character
-    pat = new Protagonist( name );
+    pat = new Human( name );
 
   }//end newGame()
 
@@ -112,17 +112,7 @@ public class YoRPG {
         // Give user the option of using a special attack:
         // If you land a hit, you incur greater damage,
         // ...but if you get hit, you take more damage.
-        try {
-          System.out.println( "\nDo you feel lucky?" );
-          System.out.println( "\t1: Nay.\n\t2: Aye!" );
-          i = Integer.parseInt( in.readLine() );
-        }
-        catch ( IOException e ) { }
-
-        if ( i == 2 )
-          pat.specialize();
-        else
-          pat.normalize();
+        pat.makeDecision();
 
         d1 = pat.attack( smaug );
         d2 = smaug.attack( pat );
