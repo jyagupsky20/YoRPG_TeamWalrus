@@ -6,3 +6,6 @@ public class Wizard extends Protagonist{
     return "The wizard can cast magic spells. \n Its special ability is the option to try a strong spell, but the wizard will take damage";
   }
 }
+/*
+Can damage itself for a very strong attack
+*/

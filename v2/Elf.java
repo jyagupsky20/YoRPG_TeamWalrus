@@ -3,3 +3,6 @@ public class Elf extends Protagonist {
     super(name, 5, 10, 1.0);
   }
 }
+/*
+Does weak attack that heals the elf
+*/

@@ -87,8 +87,10 @@ public class YoRPG {
     r += "\nCharacter Selection: ";
     System.out.print( r );
 
+    int protagonistsel = 0;
     try {
-	    int protagonistsel = Integer.parseInt( in.readLine() );
+	    protagonistsel = Integer.parseInt( in.readLine() );
+      System.out.println(protagonistsel);
     }
     catch ( IOException e ) { }
 
@@ -102,7 +104,9 @@ public class YoRPG {
 
     //instantiate the player's character
     if (protagonistsel == 1){
+      System.out.println("Code went here!");
       Human pat = new Human( name );
+      System.out.println(pat.getDefense());
     }
     else if (protagonistsel == 2) {
       Wizard pat = new Wizard(name);
@@ -110,6 +114,7 @@ public class YoRPG {
     else {
       Elf pat = new Elf(name);
     }
+    System.out.println(pat.getDefense());
   }//end newGame()
 
 
@@ -123,6 +128,7 @@ public class YoRPG {
     int i = 1;
     int d1, d2;
 
+    System.out.println(pat.getDefense());
     if ( Math.random() >= ( difficulty / 3.0 ) )
 	    System.out.println( "\nNothing to see here. Move along!" );
     else {
