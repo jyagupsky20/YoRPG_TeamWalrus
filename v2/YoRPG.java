@@ -104,15 +104,13 @@ public class YoRPG {
 
     //instantiate the player's character
     if (protagonistsel == 1){
-      System.out.println("Code went here!");
-      Human pat = new Human( name );
-      System.out.println(pat.getDefense());
+      pat = new Human( name );
     }
     else if (protagonistsel == 2) {
-      Wizard pat = new Wizard(name);
+      pat = new Wizard(name);
     }
     else {
-      Elf pat = new Elf(name);
+      pat = new Elf(name);
     }
     System.out.println(pat.getDefense());
   }//end newGame()
@@ -128,7 +126,6 @@ public class YoRPG {
     int i = 1;
     int d1, d2;
 
-    System.out.println(pat.getDefense());
     if ( Math.random() >= ( difficulty / 3.0 ) )
 	    System.out.println( "\nNothing to see here. Move along!" );
     else {

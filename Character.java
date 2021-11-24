@@ -1,8 +1,8 @@
 public class Character{
-	int health;
-	int strength;
-	int defense;
-	double attack_rating;
+	protected int health;
+	protected int strength;
+	protected int defense;
+	protected double attack_rating;
 	public Character(int health, int strength, int defense, double attack_rating){
 		this.health = health;
 		this.strength = strength;
@@ -22,5 +22,8 @@ public class Character{
 		int damage = (int) Math.max((this.strength*this.attack_rating)-defendant.getDefense(),0);
 		defendant.lowerHP(damage);
 		return damage;
+	}
+	public static String about(){
+		return "This is a generic character. This shouldn't display.";
 	}
 }

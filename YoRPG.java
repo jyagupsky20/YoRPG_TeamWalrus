@@ -26,13 +26,13 @@ public class YoRPG {
   //change this constant to set number of encounters in a game
   public final static int MAX_ENCOUNTERS = 5;
 
-  //each round, a Protagonist and a Monster will be instantiated...
   private Protagonist pat;
   private Monster smaug;
 
   private int moveCount;
   private boolean gameOver;
   private int difficulty;
+  private int protagonistsel;
 
   private InputStreamReader isr;
   private BufferedReader in;
@@ -76,6 +76,24 @@ public class YoRPG {
     }
     catch ( IOException e ) { }
 
+    String r = "";
+    r += "\nChoose your character: \n";
+    r += "\t1: Human\n";
+    r += Human.about();
+    r += "\n\t2: Wizard\n";
+    r += Wizard.about();
+    r += "\n\t3: Elf\n";
+    r += Elf.about();
+    r += "\nCharacter Selection: ";
+    System.out.print( r );
+
+    int protagonistsel = 0;
+    try {
+	    protagonistsel = Integer.parseInt( in.readLine() );
+      System.out.println(protagonistsel);
+    }
+    catch ( IOException e ) { }
+
     s = "Intrepid protagonist, what doth thy call thyself? (State your name): ";
     System.out.print( s );
 
@@ -85,8 +103,16 @@ public class YoRPG {
     catch ( IOException e ) { }
 
     //instantiate the player's character
-    pat = new Protagonist( name );
-
+    if (protagonistsel == 1){
+      pat = new Human( name );
+    }
+    else if (protagonistsel == 2) {
+      pat = new Wizard(name);
+    }
+    else {
+      pat = new Elf(name);
+    }
+    System.out.println(pat.getDefense());
   }//end newGame()
 
 
@@ -112,18 +138,11 @@ public class YoRPG {
         // Give user the option of using a special attack:
         // If you land a hit, you incur greater damage,
         // ...but if you get hit, you take more damage.
-        try {
-          System.out.println( "\nDo you feel lucky?" );
-          System.out.println( "\t1: Nay.\n\t2: Aye!" );
-          i = Integer.parseInt( in.readLine() );
+        try{
+          pat.offerChoice();
+          pat.makeDecision(in.readLine());
         }
-        catch ( IOException e ) { }
-
-        if ( i == 2 )
-          pat.specialize();
-        else
-          pat.normalize();
-
+        catch (IOException e) {}
         d1 = pat.attack( smaug );
         d2 = smaug.attack( pat );
 
