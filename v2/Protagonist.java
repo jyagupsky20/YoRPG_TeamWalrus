@@ -1,14 +1,17 @@
 public class Protagonist extends Character{
   String name = "";
   boolean strongAttack = false;
-  public Protagonist(String name){
-    super(100, 20, 5, 1.0);
+  public Protagonist(String name, int strength, int defense, double attack_rating){
+    super(100, strength, defense, attack_rating);
     this.name = name;
   }
   public String getName(){
     return name;
   }
-  public void makeDecision(){
-    System.out.println("No decision to be made here. This is the default case.")
+  public void offerChoice(){
+    System.out.println("No decision to be made here. This is the default case.");
+  }
+  public void makeDecision(String in){
+    System.out.println("No decision to be made here. This is the default case.");
   }
 }

@@ -1,4 +1,11 @@
 public class Human extends Protagonist {
+  public Human(String name){
+    super(name, 5, 10, 1.0);
+  }
+  public static String about(){
+    return "The human is the average character. \n Its special ability is the option to try a strong attack, but this can backfire.";
+  }
+
   public void specialize(){
     attack_rating = 2.5;
     strongAttack = true;
@@ -24,17 +31,15 @@ public class Human extends Protagonist {
     }
     return damage;
   }
-  public void makeDecision(){
-    try {
-      System.out.println( "\nDo you feel lucky?" );
-      System.out.println( "\t1: Nay.\n\t2: Aye!" );
-      i = Integer.parseInt( in.readLine() );
-    }
-    catch ( IOException e ) { }
-
+  public void offerChoice(){
+    System.out.println( "\nDo you feel lucky?" );
+    System.out.println( "\t1: Nay.\n\t2: Aye!" );
+  }
+  public void makeDecision(String in){
+    int i = Integer.parseInt( in );
     if ( i == 2 )
-      pat.specialize();
+      this.specialize();
     else
-      pat.normalize();
+      this.normalize();
   }
 }

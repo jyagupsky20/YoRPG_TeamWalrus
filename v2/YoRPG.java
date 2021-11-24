@@ -33,6 +33,7 @@ public class YoRPG {
   private int moveCount;
   private boolean gameOver;
   private int difficulty;
+  private int protagonistsel;
 
   private InputStreamReader isr;
   private BufferedReader in;
@@ -76,6 +77,22 @@ public class YoRPG {
     }
     catch ( IOException e ) { }
 
+    String r = "";
+    r += "\nChoose your character: \n";
+    r += "\t1: Human\n";
+    r += Human.about();
+    r += "\n\t2: Wizard\n";
+    r += Wizard.about();
+    r += "\n\t3: Elf\n";
+    r += Elf.about();
+    r += "\nCharacter Selection: ";
+    System.out.print( r );
+
+    try {
+	    int protagonistsel = Integer.parseInt( in.readLine() );
+    }
+    catch ( IOException e ) { }
+
     s = "Intrepid protagonist, what doth thy call thyself? (State your name): ";
     System.out.print( s );
 
@@ -85,8 +102,15 @@ public class YoRPG {
     catch ( IOException e ) { }
 
     //instantiate the player's character
-    pat = new Human( name );
-
+    if (protagonistsel == 1){
+      pat = new Human( name );
+    }
+    else if (protagonistsel == 2) {
+      pat = new Wizard(name);
+    }
+    else {
+      pat = new Elf(name);
+    }
   }//end newGame()
 
 
@@ -112,8 +136,11 @@ public class YoRPG {
         // Give user the option of using a special attack:
         // If you land a hit, you incur greater damage,
         // ...but if you get hit, you take more damage.
-        pat.makeDecision();
-
+        try{
+          pat.offerChoice();
+          pat.makeDecision(in.readLine());
+        }
+        catch (IOException e) {}
         d1 = pat.attack( smaug );
         d2 = smaug.attack( pat );
 

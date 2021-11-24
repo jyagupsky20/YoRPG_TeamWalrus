@@ -23,7 +23,7 @@ public class Character{
 		defendant.lowerHP(damage);
 		return damage;
 	}
-	public String about(){
-		System.out.println("This is a generic character. This shouldn't display.")
+	public static String about(){
+		return "This is a generic character. This shouldn't display.";
 	}
 }
