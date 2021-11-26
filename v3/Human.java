@@ -32,14 +32,16 @@ public class Human extends Protagonist {
     return damage;
   }
   public void offerChoice(){
-    System.out.println( "\nDo you want to try a strong attack? You may lose defense temporarily." );
+    System.out.println( "\nDo you want to try a strong attack? You may lose defense if your attack fails." );
     System.out.println( "\t1: Nay.\n\t2: Aye!" );
   }
   public void makeDecision(String in){
     int i = Integer.parseInt( in );
-    if ( i == 2 )
+    if ( i == 2 ){
       this.specialize();
-    else
+    }
+    else{
       this.normalize();
+    }
   }
 }
