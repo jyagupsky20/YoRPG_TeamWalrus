@@ -1,6 +1,6 @@
 public class Wizard extends Protagonist{
   public Wizard(String name){
-    super(name, 5, 10, 1.0);
+    super(name, 21, 13, 1.0);
   }
   public static String about(){
     return "The wizard can cast magic spells.\nIts special ability is the option to try a strong spell, but the wizard will take damage";
@@ -14,7 +14,7 @@ public class Wizard extends Protagonist{
     int i = Integer.parseInt( in );
     if ( i == 2 ){
       this.health -= 5;
-      this.attack_rating = 5.0;
+      this.attack_rating = 2.5;
     }
   }
 }

@@ -1,6 +1,6 @@
 public class Human extends Protagonist {
   public Human(String name){
-    super(name, 5, 10, 1.0);
+    super(name, 19, 17, 1.0);
   }
   public static String about(){
     return "The human is the average character.\nIts special ability is the option to try a strong attack, but this can backfire.";
