@@ -90,7 +90,6 @@ public class YoRPG {
     int protagonistsel = 0;
     try {
 	    protagonistsel = Integer.parseInt( in.readLine() );
-      System.out.println(protagonistsel);
     }
     catch ( IOException e ) { }
 
@@ -112,7 +111,6 @@ public class YoRPG {
     else {
       pat = new Elf(name);
     }
-    System.out.println(pat.getDefense());
   }//end newGame()
 
 
@@ -131,8 +129,22 @@ public class YoRPG {
     else {
 	    System.out.println( "\nLo, yonder monster approacheth!" );
 
-	    smaug = new Monster();
+      //Create a terrifying foe for the protagonist to face, and relay details to the protagonist!
+      int monsterType = (int) Math.floor(Math.random() * 3);
 
+      if (monsterType == 0){
+  	    smaug = new GeorgeClooney();
+        System.out.println(GeorgeClooney.about());
+      }
+      else if (monsterType == 1){
+        smaug = new EvilArmadillo();
+        System.out.println(EvilArmadillo.about());
+      }
+      else {
+        smaug = new AnnoyedTiger();
+        System.out.println(AnnoyedTiger.about());
+      }
+      //Begin duel to the death!
 	    while( smaug.isAlive() && pat.isAlive() ) {
 
         // Give user the option of using a special attack:

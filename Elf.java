@@ -1,13 +1,13 @@
 public class Elf extends Protagonist {
   public Elf(String name){
-    super(name, 5, 10, 1.0);
+    super(name, 17, 15, 1.0);
   }
   public static String about(){
   	return "The elf is slightly weaker than the human, but can use magic.\nIts special ability is to perform a healing strike, which is weaker than a normal attack, but will restore the elf's HP";
   }
   public void offerChoice(){
     this.attack_rating = 1.0;
-    System.out.println( "\nDo you want to try a strong attack? This will cost you some health." );
+    System.out.println( "\nDo you want to try a healing strike? This will weaken you, but you will heal a bit." );
     System.out.println( "\t1: Nay.\n\t2: Aye!" );
   }
   public void makeDecision(String in){
